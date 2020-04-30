@@ -17,7 +17,7 @@ export class ApiService {
    * @return  {Observable<Freight[]>}
    */
   getPrevision(cartes : Carte[]): Observable<Prevision> {
-    let url : string = 'https://pok-api.herokuapp.com/obtenirPrevision?apiKey=srmwojcrvfhijmrjse&';
+    let url : string = 'https://pok-api.herokuapp.com/obtenirPrevision?apiKey=ctgadfzcowmltzobjpnapud&';
     for (let index = 1; index <= cartes.length; index++) {
       url = url + '&carte' + index + '=' + cartes[index-1].nomCarte
 
@@ -34,7 +34,7 @@ export class ApiService {
    */
   getPaquetDeCarte(): Observable<Carte[]> {
     return this.http
-      .get<Carte[]>('http://localhost:8080/getPaquetCarte')
+      .get<Carte[]>('https://pok-api.herokuapp.com/getPaquetCarte')
       .pipe(catchError(this.handleError('api.freight.error')));
   }
 
