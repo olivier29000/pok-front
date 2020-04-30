@@ -1,7 +1,7 @@
 
 
 <img  *ngFor="let carte of paquetDeCartes " (click)="ajouterCarte(carte)" [src]=carte.urlPhoto>
-<p>pok-info works!</p>
+
 <img  *ngFor="let carte of cartesCourantes " (click)="retirerCarte(carte)" [src]=carte.urlPhoto>
 
 <button type="button" class="btn btn-primary" (click)="appelApiPrevision()" [disabled]="cartesCourantes.length>4?false:true">Primary</button>
